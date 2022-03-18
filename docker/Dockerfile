@@ -13,7 +13,7 @@ RUN crystal build ./src/invidious.cr \
     --static --warnings all \
     --link-flags "-lxml2 -llzma"
 
-FROM alpine:latest
+FROM alpine:3.15
 RUN apk add --no-cache librsvg ttf-opensans
 WORKDIR /invidious
 RUN addgroup -g 1000 -S invidious && \
